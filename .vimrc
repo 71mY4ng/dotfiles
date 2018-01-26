@@ -89,4 +89,10 @@ set t_Co=256
     map <C-h> <C-W>h
     map <C-l> <C-W>l
 
+
+    " 将当前输入单词转成大写
+    imap <c-u> <esc>vbUea
+
+    " 普通模式下将当前单词转换为大写
+    nmap <c-u> evbUe
 " }
