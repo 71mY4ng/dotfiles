@@ -1,3 +1,4 @@
+
 " vundle 环境设置
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -14,6 +15,10 @@ Plugin 'jedi-vim/jedi-vim'
 
 " 插件列表结束
 call vundle#end()
+
+" ------------------[ General ]--------------------" {
+
+" 自适应不同语言的智能缩进
 filetype plugin indent on
 
 " 显示光标当前位置
@@ -28,14 +33,6 @@ set hlsearch
 " 禁止折行
 set nowrap
 
-" 开启语法高亮功能
-syntax enable
-" 允许用指定语法高亮配色方案替换默认方案
-syntax on
-color dracula
-
-" 自适应不同语言的智能缩进
-filetype indent on
 " 将制表符扩展为空格
 set expandtab
 " 设置编辑时制表符占用空格数
@@ -44,6 +41,23 @@ set tabstop=4
 set shiftwidth=4
 " 让 vim 把连续数量的空格视为一个制表符
 set softtabstop=4
+
+let mapleader = ","
+let g:mapleader = ","
+
+" }
+
+" -------------------------[Colors and Fonts]------------------- {
+" 开启语法高亮功能
+syntax enable
+" 允许用指定语法高亮配色方案替换默认方案
+syntax on
+color dracula
+
+set encoding=utf8
+
+
+" }
 
 " airline {
 
@@ -66,3 +80,4 @@ set t_Co=256
   let g:pymode_breakpoint_bind = '<leader>br'
 
 " }
+
