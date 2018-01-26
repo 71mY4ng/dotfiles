@@ -10,7 +10,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'dracula/vim'
-Plugin 'jedi-vim/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 " Plugin 'Valloric/YouCompleteMe'
 
 " 插件列表结束
@@ -59,9 +59,10 @@ set encoding=utf8
 
 " }
 
-" airline {
+" vim-airline {
 
 let g:airline_powerline_fonts = 1
+let g:airline_exclude_preview=1  
 
 set laststatus=2
 set t_Co=256
