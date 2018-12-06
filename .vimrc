@@ -1,4 +1,5 @@
 
+
 " vundle 环境设置
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -97,3 +98,4 @@ set t_Co=256
     " 普通模式下将当前单词转换为大写
     nmap <c-u> evbUe
 " }
+
