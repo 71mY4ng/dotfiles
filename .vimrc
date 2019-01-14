@@ -11,7 +11,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'dracula/vim'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'       " 补全双引号括号等
+Plugin 'scrooloose/nerdcommenter'   " 快速注释
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'    " 多个文件共享一个nerdtree
+Plugin 'Xuyuanp/nerdtree-git-plugin'    " nerd-tree 的git状态显示
 " Plugin 'Valloric/YouCompleteMe'
 
 " 插件列表结束
@@ -80,6 +84,38 @@ set t_Co=256
   let g:pymode_folding = 0
   let g:pymode_options_colorcolumn = 1
   let g:pymode_breakpoint_bind = '<leader>br'
+
+" }
+
+" NERDCommentor {
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = {
+        \ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },
+        \ 'less': { 'left': '/**', 'right': '*/' }
+    \ }
+let g:NERDAltDelims_javascript = 1
+let g:NERDDefaultNesting = 0
+
+"}
+
+" NERDTree {
+" nerdtree-git
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " }
 
