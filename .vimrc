@@ -1,25 +1,34 @@
+" Prerequisite : vim-plug
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/seoul256.vim'
+
+" Use release branch (Recommend)
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes' 
+
+Plug 'NLKNguyen/papercolor-theme'
+" Plug 'dracula/vim'
+
+" 补全双引号括号等
+Plug 'davidhalter/jedi-vim'       
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '/path/to/fzf', 'do': './install --all' }
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
 
 
-" vundle 环境设置
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-" vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'dracula/vim'
-Plugin 'davidhalter/jedi-vim'       " 补全双引号括号等
-Plugin 'scrooloose/nerdcommenter'   " 快速注释
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'    " 多个文件共享一个nerdtree
-Plugin 'Xuyuanp/nerdtree-git-plugin'    " nerd-tree 的git状态显示
-" Plugin 'Valloric/YouCompleteMe'
-
-" 插件列表结束
-call vundle#end()
 
 " ------------------[ General ]--------------------" {
 
@@ -53,11 +62,29 @@ let g:mapleader = ","
 " }
 
 " -------------------------[Colors and Fonts]------------------- {
+    
+set laststatus=2
+set t_Co=256
+
 " 开启语法高亮功能
 syntax enable
 " 允许用指定语法高亮配色方案替换默认方案
 syntax on
-color dracula
+
+set background=dark
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+
+color PaperColor
+
+" enable transparent background
+" hi Normal guibg=NONE ctermbg=NONE
 
 set encoding=utf8
 
@@ -69,8 +96,6 @@ set encoding=utf8
 let g:airline_powerline_fonts = 1
 let g:airline_exclude_preview=1  
 
-set laststatus=2
-set t_Co=256
 " }
 
 " python-mode {
@@ -134,4 +159,3 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
     " 普通模式下将当前单词转换为大写
     nmap <c-u> evbUe
 " }
-
