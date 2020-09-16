@@ -58,3 +58,22 @@ POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='green'
 export PATH=~/.local/bin:/usr/java/jdk1.8.0_171/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export DISPLAY=localhost:0.0
+export http_proxy=127.0.0.1:7890
+export https_proxy=127.0.0.1:7890
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+## windows env setting
+
+# alias wingit="/mnt/c/Program\\ Files/Git/cmd/git.exe"
+# alias git=wingit
+# 
+# function cdwin(){
+#     line=${1/C://mnt/c}
+#     line=${line//\\//}
+#     cd "$line"
+# }
